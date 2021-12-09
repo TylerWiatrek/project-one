@@ -1,16 +1,14 @@
 # project-one
 
 --- 
-## Travel Safe
+## Clear Skies
 
 ## Description 
-Travel Safe is a website that allows you to compare ticket prices between various airlines.
-After confirming your desitnation you are shown the weather for the day you plan to arrive.
-
+Clear Skies is a website that allows users to look up the times for Sunrises/Sunsets. Upon finding a location you will also be provided the local weather so you can plan for Clear Skies!
 ### User Story
--As A traveller 
--I WANT to compare plane tickets and view weather 
--SO THAT i can find the best deal
--WHEN I find the best deal
--I AM GIVEN the local weather on the day i arrive
+-AS A Photographer
+-I WANT a website that will show me when sunrise and sunset is
+-SO THAT i can capture scenic photo's of the sky
+-WHEN i find a location 
+-I AM GIVEN the local weather 
 
