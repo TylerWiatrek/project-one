@@ -12,3 +12,9 @@ Clear Skies is a website that allows users to look up the times for Sunrises/Sun
 -WHEN i find a location 
 -I AM GIVEN the local weather 
 
+### Our API'S
+To Get Sunrise and Sunset times:
+https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400&callback=mycallback 
+
+To Get Local Weather:
+https://api.openweathermap.org/data/2.5/onecall?lat=36.7201600&lon=-4.4203400&appid=2ea8fea258bbf4c7d30e6cc6067e3356
