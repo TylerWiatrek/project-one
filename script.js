@@ -10,7 +10,7 @@ var getCityCoordinates = function(city) {
     }).then(function(data){
         console.log(data.coord)
         getSunriseSunset(data.coord)
-       
+        console.log(city)
         });
 };
 
@@ -20,14 +20,15 @@ var getCityCoordinates = function(city) {
 var getSunriseSunset = function(coordinates) {
     var {lat} = coordinates;
     var {lon} = coordinates;
-    console.log(lat);
-    console.log(lon);
+    //console.log(lat);
+    //console.log(lon);
     var apiSunrise = `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lon}`
     fetch(apiSunrise)
     .then(function(response) {
         return response.json()
     }).then(function(data) {
         console.log(data)
+        //console.log(data.results.sunrise)
     });
 };
 
