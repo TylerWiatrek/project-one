@@ -77,6 +77,7 @@ var getNauticalTwilight = function(city, data) {
 }
 
 var getAstroTwilight = function(city, data) {
+
     var astroTitle = document.createElement("h2");
     // need to add classes here for the title of each civil, nautical, astro div
     //civilTitle.classList.add("");
@@ -86,6 +87,7 @@ var getAstroTwilight = function(city, data) {
     astroTimeStart.textContent = `Astronomical Twilight Start: ${data.results.astronomical_twilight_begin}`
     astroTimeEnd.textContent = `Astronomical Twilight End: ${data.results.astronomical_twilight_end}`
     astroTwilightEl.append(astroTitle, astroTimeStart, astroTimeEnd);
+
 
 
 
