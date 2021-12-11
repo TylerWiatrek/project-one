@@ -4,36 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--<link rel="stylesheet" href="  * FOUNDATION HERE *  " integrity="" crossorigin="">-->
     <link rel="stylesheet" href="style.css">
-    <title>Clear Skies</title>
+    <title> Clear Skies </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <header>
-        <h1>
-
-        </h1>
+    <!--Header/WebSite Name-->
+    <header">
+        <h1>Clear Skies</h1>
     </header>
     <main>
-        <div>
-            <h3>
-                Search for a City:
-            </h3>
-        </div>
+        <!--Search Bar-->
         <form id="sunrise-form">
             <label for="city"></label>
-            <input name="city" type="text" id="city" />
+            <input name="city" type="text" id="city"/>
             <button type="submit">Search</button>
-            
         </form>
+        <!--area to return location, sunrise and sunset-->
+        <div>
+            <div id="location"></div>
 
+            <div id="sunrise"></div>
+            
+            <div id="sunset"></div>
+        </div>
+        <!--container to hold the three cards-->
+        <div id="twilight-times">
+            <div id="civil-twilight">
 
+            </div>
+            <div id="nautical-twilight">
 
+            </div>
+            <div id="astro-twilight">
 
+            </div>
+        </div>
+        <!--previous searches-->
+        <div>
+            <ul></ul>
+        </div>
     </main>
-
-
-        
     <script src="script.js"></script>
 </body>
 </html>
