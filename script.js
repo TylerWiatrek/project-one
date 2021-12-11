@@ -1,3 +1,20 @@
+function initPage() {
+    let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
+    console.log(searchHistory);
+
+
+    searchEl.addEventListener("click",function() {
+        const searchTerm = inputEl.value;
+        getWeather(searchTerm);
+        searchHistory.push(searchTerm);
+        localStorage.setItem("search",JSON.stringify(searchHistory));
+        renderSearchHistory();
+    })
+    clearEl.addEventListener("click",function() {
+        searchHistory = [];
+        renderSearchHistory();
+    })
+}
 var searchCityEl = document.querySelector("#sunrise-form");
 var cityInputEl = document.querySelector("#city");
 
@@ -9,6 +26,7 @@ var getCityCoordinates = function(city) {
         return response.json()
     }).then(function(data){
         console.log(data.coord)
+        console.log(data)
         getSunriseSunset(data.coord)
         console.log(city)
         });
