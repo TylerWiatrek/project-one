@@ -18,7 +18,23 @@ var getCityCoordinates = function(city) {
         });
 };
 
+function initPage() {
+    let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
+    console.log(searchHistory);
 
+
+    searchEl.addEventListener("click",function() {
+        const searchTerm = inputEl.value;
+        getWeather(searchTerm);
+        searchHistory.push(searchTerm);
+        localStorage.setItem("search",JSON.stringify(searchHistory));
+        renderSearchHistory();
+    })
+    clearEl.addEventListener("click",function() {
+        searchHistory = [];
+        renderSearchHistory();
+    })
+}
 
 
 var getSunriseSunset = function(coordinates) {
