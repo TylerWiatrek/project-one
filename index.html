@@ -7,27 +7,28 @@
     <link rel="stylesheet" href="style.css">
     <title> Clear Skies </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-float.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <!--Header/WebSite Name-->
-    <header">
-        <h1>Clear Skies</h1>
+    <header class="row align-center">
+        <h1 class="columns medium-12 ">Clear Skies</h1>
     </header>
     <main>
         <!--Search Bar-->
-        <form id="sunrise-form">
+        <form id="sunrise-form" class="row">
             <label for="city"></label>
-            <input name="city" type="text" id="city"/>
-            <button type="submit">Search</button>
+            <input name="city" type="text" id="city" class="column medium-10">
+            <button type="submit" class="column medium-2" >Search</button>
         </form>
         <!--area to return location, sunrise and sunset-->
-        <div>
-            <div id="location"></div>
+        <div class="row">
+            <div id="location" class="columns">location</div>
 
-            <div id="sunrise"></div>
+            <div id="sunrise" class="">sunrise</div>
             
-            <div id="sunset"></div>
+            <div id="sunset">sunset</div>
         </div>
         <!--container to hold the three cards-->
         <div>
