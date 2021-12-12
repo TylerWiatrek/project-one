@@ -8,6 +8,7 @@
     <title> Clear Skies </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-float.min.css" crossorigin="anonymous">
+    <link rell="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -18,10 +19,12 @@
     </header>
     <main class="row">
         <!--Search Bar-->
-        <form id="sunrise-form" class="search">
+        <form id="sunrise-form" class="search ">
             <label for="city"></label>
-            <input name="city" type="text" id="city" class="column medium-10">
-            <button type="submit" class="column medium-2 submit success button rounded" >Search</button>
+            <input name="city" type="text" id="city" class="column medium-11 roundsearch">
+            <button type="submit" class="column medium-1 submit success button roundedbtn" style="font-size: 12.5px;"> 
+                <i class="ri-search-line ri-fw"></i>
+            </button>
         </form>
         <!--area to return location, sunrise and sunset-->
         <div class="location row align-center">
