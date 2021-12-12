@@ -22,9 +22,7 @@ var getCityCoordinates = function(city, date) {
         //console.log(date);
         getSunriseSunset(data.coord)
         getWeather(city, data)
-        //console.log(date);
-        //console.log(data.weather)
-        //console.log(city)
+        
         });
 };
 
@@ -148,5 +146,22 @@ var getSearch = function(event) {
     getCityCoordinates(cityName);
 }
 
+var getCivilDefinition = function(event) {
+    alert("The civil button was clicked!");
+
+}
+
+var getNauticalDefinition = function(event) {
+    alert("The nautical button was clicked!");
+
+}
+
+var getAstroDefinition = function(event) {
+    alert("The astronomical button was clicked!");
+
+}
+ document.getElementById("civil-button").addEventListener("click", getCivilDefinition);
+ document.getElementById("nautical-button").addEventListener("click", getNauticalDefinition);
+ document.getElementById("astro-button").addEventListener("click", getAstroDefinition);
 
 searchCityEl.addEventListener("submit", getSearch);
