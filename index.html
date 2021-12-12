@@ -11,34 +11,35 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <div class="background">
     <!--Header/WebSite Name-->
-    <header class="row align-center">
-        <h1 class="columns medium-12 ">Clear Skies</h1>
+    <header class="title">
+        <h1 class="text-center">Clear Skies</h1>
     </header>
-    <main>
+    <main class="row">
         <!--Search Bar-->
-        <form id="sunrise-form" class="row">
+        <form id="sunrise-form" class="search">
             <label for="city"></label>
             <input name="city" type="text" id="city" class="column medium-10">
-            <button type="submit" class="column medium-2" >Search</button>
+            <button type="submit" class="column medium-2 submit success button rounded" >Search</button>
         </form>
         <!--area to return location, sunrise and sunset-->
-        <div class="row align-center">
-            <div id="location" class="columns medium-12">location</div>
+        <div class="location row align-center">
+            <div id="location" class="columns medium-12 text-center">location</div>
 
-            <div id="sunrise" class="columns medium-12">sunrise</div>
+            <div id="sunrise" class="columns medium-12 text-center">sunrise</div>
             
-            <div id="sunset" class="columns medium-12">sunset</div>
+            <div id="sunset" class="columns medium-12 text-center">sunset</div>
         </div>
         <!--container to hold the three cards-->
-        <div id="twilight-times">
-            <div id="civil-twilight">
+        <div id="twilight-times" class="row">
+            <div id="civil-twilight" class="column medium-4 small-12 text-center bordered">
 
             </div>
-            <div id="nautical-twilight">
+            <div id="nautical-twilight" class="column medium-4  small-12 text-center bordered">
 
             </div>
-            <div id="astro-twilight">
+            <div id="astro-twilight" class="column medium-4 small-12 text-center bordered">
 
 
             </div>
@@ -47,7 +48,18 @@
         <div>
             <ul></ul>
         </div>
+
     </main>
+</div>
     <script src="script.js"></script>
+
 </body>
 </html>
+
+<!--
+    1. add padding and margins
+    2. add background to header
+    3. reactive to different screensizes
+    4. clean up styling
+
+-->
