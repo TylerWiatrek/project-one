@@ -22,9 +22,7 @@ var getCityCoordinates = function(city, date) {
         //console.log(date);
         getSunriseSunset(data.coord)
         getWeather(city, data)
-        //console.log(date);
-        //console.log(data.weather)
-        //console.log(city)
+        
         });
 };
 
@@ -167,6 +165,3 @@ var getAstroDefinition = function(event) {
  document.getElementById("astro-button").addEventListener("click", getAstroDefinition);
 
 searchCityEl.addEventListener("submit", getSearch);
-// civilButtonEl.addEventListener("submit", getCivilDefinition);
-// nauticalButtonEl.addEventListener("submit", getNauticalDefinition);
-// astroButtonEl.addEventListener("submit", getAstroDefinition);
