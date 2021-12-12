@@ -148,5 +148,25 @@ var getSearch = function(event) {
     getCityCoordinates(cityName);
 }
 
+var getCivilDefinition = function(event) {
+    alert("The civil button was clicked!");
+
+}
+
+var getNauticalDefinition = function(event) {
+    alert("The nautical button was clicked!");
+
+}
+
+var getAstroDefinition = function(event) {
+    alert("The astronomical button was clicked!");
+
+}
+ document.getElementById("civil-button").addEventListener("click", getCivilDefinition);
+ document.getElementById("nautical-button").addEventListener("click", getNauticalDefinition);
+ document.getElementById("astro-button").addEventListener("click", getAstroDefinition);
 
 searchCityEl.addEventListener("submit", getSearch);
+// civilButtonEl.addEventListener("submit", getCivilDefinition);
+// nauticalButtonEl.addEventListener("submit", getNauticalDefinition);
+// astroButtonEl.addEventListener("submit", getAstroDefinition);
