@@ -9,10 +9,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-float.min.css" crossorigin="anonymous">
     <link rell="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    <div class="background">
+<body class="background">
+    <div>
     <!--Header/WebSite Name-->
     <header class="title">
         <h1 class="text-center">Clear Skies</h1>
@@ -22,28 +25,28 @@
         <form id="sunrise-form" class="search ">
             <label for="city"></label>
             <input name="city" type="text" id="city" class="column medium-11 roundsearch">
-            <button type="submit" class="column medium-1 submit success button roundedbtn" style="font-size: 13px;"> 
+            <button type="submit" class="column medium-1 submit success button roundedbtn" style="font-size: 12.5px;"> 
                 <i class="ri-search-line ri-fw"></i>
             </button>
         </form>
         <!--area to return location, sunrise and sunset-->
-        <div class="location row align-center">
-            <div id="location" class="columns medium-12 text-center">location</div>
+        <div class="location row align-center ">
+            <div id="location" class="columns medium-12 text-center h2">location</div>
 
-            <div id="sunrise" class="columns medium-12 text-center">sunrise</div>
+            <div id="sunrise" class="columns medium-12 text-center h4"></div>
             
-            <div id="sunset" class="columns medium-12 text-center">sunset</div>
+            <div id="sunset" class="columns medium-12 text-center h4"></div>
         </div>
         <!--container to hold the three cards-->
 
         <div id="twilight-times" class="row">
-            <div id="civil-twilight" class="column medium-4 small-12 text-center bordered">
+            <div id="civil-twilight" class="column medium-4 small-12 text-center">
 
             </div>
-            <div id="nautical-twilight" class="column medium-4  small-12 text-center bordered">
+            <div id="nautical-twilight" class="column medium-4  small-12 text-center">
 
             </div>
-            <div id="astro-twilight" class="column medium-4 small-12 text-center bordered">
+            <div id="astro-twilight" class="column medium-4 small-12 text-center">
 
         <div id="twilight-times">
             <div id="civil-twilight">
