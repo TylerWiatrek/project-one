@@ -28,6 +28,7 @@ function renderSearchHistory() {
         })
         historyEl.append(historyItem);
     }
+    
 }
 var searchCityEl = document.querySelector("#sunrise-form");
 var cityInputEl = document.querySelector("#city");
