@@ -30,6 +30,20 @@ function renderSearchHistory() {
     }
     
 }
+function saveRecentSearches(city) {
+    recentSearchHistory = localStorage.getItem("recentSearches") ?
+        JSON.parse(localStorage.getItem("recentSearches")) : [];
+    recentSearchHistory.push(city)
+
+    // keeps array at length of 5 
+    if (recentSearchHistory.length > 5) {
+        recentSearchHistory.shift();
+    }
+    localStorage.setItem("recentSearches", JSON.stringify(recentSearchHistory))
+    clearBtns()
+    getSearches()
+}
+
 var searchCityEl = document.querySelector("#sunrise-form");
 var cityInputEl = document.querySelector("#city");
 var civilTwilightEl = document.getElementById("civil-twilight");
@@ -199,3 +213,5 @@ var getAstroDefinition = function(event) {
  document.getElementById("astro-button").addEventListener("click", getAstroDefinition);
 
 searchCityEl.addEventListener("submit", getSearch);
+
+initPage();
