@@ -33,6 +33,7 @@ var getSunriseSunset = function(coordinates) {
 };
 
 
+
 var getSearch = function(event) {
     event.preventDefault();
     var cityName = cityInputEl.value.trim();
