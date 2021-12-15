@@ -36,6 +36,10 @@
     font-size: 20px;
 
 }
+.image {
+    width: 300px;
+    height: 150px;
+}
 
 @media only screen and (max-width: 638px) {
     .header {

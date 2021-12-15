@@ -83,11 +83,11 @@ var getCivilTwilight = function(city, data) {
     // need to add classes here for the title of each civil, nautical, astro div
     //civilTitle.classList.add("");
     civilTitle.textContent = "Civil Twilight";
-    var civilTimeStart = document.createElement("p");
-    var civilTimeEnd = document.createElement("p");
+    var civilTimeStart = document.getElementById("civilTimeStart");
+    var civilTimeEnd = document.getElementById("civilTimeEnd");
     civilTimeStart.textContent = `Civil Twilight Start: ${data.results.civil_twilight_begin}`
     civilTimeEnd.textContent = `Civil Twilight End: ${data.results.civil_twilight_end}`
-    civilTwilightEl.append(civilTitle, civilTimeStart, civilTimeEnd);
+    //civilTwilightEl.append(civilTitle, civilTimeStart, civilTimeEnd);
     var civilButton = document.createElement("button");
     civilButton.setAttribute("type", "submit");
     civilButton.textContent = "What is civil twilight?";
@@ -107,11 +107,11 @@ var getNauticalTwilight = function(city, data) {
     // need to add classes here for the title of each civil, nautical, astro div
     //civilTitle.classList.add("");
     nauticalTitle.textContent = "Nautical Twilight";
-    var nauticalTimeStart = document.createElement("p");
-    var nauticalTimeEnd = document.createElement("p");
+    var nauticalTimeStart = document.getElementById("nauticalTimeStart");
+    var nauticalTimeEnd = document.getElementById("nauticalTimeEnd");
     nauticalTimeStart.textContent = `Nautical Twilight Start: ${data.results.nautical_twilight_begin}`
     nauticalTimeEnd.textContent = `Nautical Twilight End: ${data.results.nautical_twilight_end}`
-    nauticalTwilightEl.append(nauticalTitle, nauticalTimeStart, nauticalTimeEnd);
+    //nauticalTwilightEl.append(nauticalTitle, nauticalTimeStart, nauticalTimeEnd);
     var nauticalButton = document.createElement("button");
     nauticalButton.setAttribute("type", "submit");
     nauticalButton.textContent = "What is nautical twilight?";
@@ -126,11 +126,11 @@ var getAstroTwilight = function(city, data) {
     // need to add classes here for the title of each civil, nautical, astro div
     //civilTitle.classList.add("");
     astroTitle.textContent = "Astro Twilight";
-    var astroTimeStart = document.createElement("p");
-    var astroTimeEnd = document.createElement("p");
+    var astroTimeStart = document.getElementById("astroTimeStart");
+    var astroTimeEnd = document.getElementById("astroTimeEnd");
     astroTimeStart.textContent = `Astro Twilight Start: ${data.results.astronomical_twilight_begin}`
     astroTimeEnd.textContent = `Astro Twilight End: ${data.results.astronomical_twilight_end}`
-    astroTwilightEl.append(astroTitle, astroTimeStart, astroTimeEnd);
+    //astroTwilightEl.append(astroTitle, astroTimeStart, astroTimeEnd);
     var astroButton = document.createElement("button");
     astroButton.setAttribute("type", "submit");
     astroButton.textContent = "What is astronomical twilight?";
