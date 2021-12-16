@@ -102,6 +102,7 @@ var getTimes = function(city, data) {
     sunriseEl.append(getSunriseTime);
     sunsetEl.append(getSunsetTime);
     var dayLength = document.createElement("p");
+    dayLength.classList.add("extra")
     dayLength.textContent = `Looks like the day will last for: ${data.results.day_length} hours`
     dayLengthEl.append(dayLength);
 
@@ -116,16 +117,14 @@ var getCivilTwilight = function(city, data) {
     civilTimeStart.textContent = `Civil Twilight Start: ${data.results.civil_twilight_begin}`
     civilTimeEnd.textContent = `Civil Twilight End: ${data.results.civil_twilight_end}`
     //civilTwilightEl.append(civilTitle, civilTimeStart, civilTimeEnd);
-    var civilButton = document.createElement("button");
-    civilButton.setAttribute("type", "submit");
-    civilButton.textContent = "What is civil twilight?";
-    civilButtonEl.append(civilButton);
+
 
 }
 
 var getWeather = function(city, data) {
     console.log(data);
     var civilClouds = document.createElement("p");
+    civilClouds.classList.add("extra")
     civilClouds.textContent = `Cloud Coverage: ${data.weather[0].description}`
     civilTwilightEl.append(civilClouds);
 }
@@ -140,10 +139,6 @@ var getNauticalTwilight = function(city, data) {
     nauticalTimeStart.textContent = `Nautical Twilight Start: ${data.results.nautical_twilight_begin}`
     nauticalTimeEnd.textContent = `Nautical Twilight End: ${data.results.nautical_twilight_end}`
     //nauticalTwilightEl.append(nauticalTitle, nauticalTimeStart, nauticalTimeEnd);
-    var nauticalButton = document.createElement("button");
-    nauticalButton.setAttribute("type", "submit");
-    nauticalButton.textContent = "What is nautical twilight?";
-    nauticalButtonEl.append(nauticalButton);
 
 
 }
@@ -179,10 +174,7 @@ var getAstroTwilight = function(city, data) {
     astroTimeStart.textContent = `Astro Twilight Start: ${data.results.astronomical_twilight_begin}`
     astroTimeEnd.textContent = `Astro Twilight End: ${data.results.astronomical_twilight_end}`
     //astroTwilightEl.append(astroTitle, astroTimeStart, astroTimeEnd);
-    var astroButton = document.createElement("button");
-    astroButton.setAttribute("type", "submit");
-    astroButton.textContent = "What is astronomical twilight?";
-    astroButtonEl.append(astroButton);
+
 
 }
 
