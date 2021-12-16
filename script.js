@@ -1,49 +1,10 @@
-function initPage() {
-    let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
-    console.log(searchHistory);
+localStorage.setItem("city", cityInputEl)
+localStorage.getItem("cityInputEl")
+window.localStorage.setItem("searchInputEl", JSON.stringify(cityInputEl));
+let cityName = window.localStorage.getItem("cityInputEl");
+console.log(JSON.parse(cityName));
 
 
-    searchEl.addEventListener("click",function() {
-        const searchTerm = inputEl.value;
-        getWeather(searchTerm);
-        searchHistory.push(searchTerm);
-        localStorage.setItem("search",JSON.stringify(searchHistory));
-        renderSearchHistory();
-    })
-    clearEl.addEventListener("click",function() {
-        searchHistory = [];
-        renderSearchHistory();
-    })
-}
-function renderSearchHistory() {
-    historyEl.innerHTML = "";
-    for (let i=0; i<searchHistory.length; i++) {
-        const historyItem = document.createElement("input");
-        historyItem.setAttribute("type","text");
-        historyItem.setAttribute("readonly",true);
-        historyItem.setAttribute("class", "form-control d-block bg-white");
-        historyItem.setAttribute("value", searchHistory[i]);
-        historyItem.addEventListener("click",function() {
-            getWeather(historyItem.value);
-        })
-        historyEl.append(historyItem);
-    }
-    
-}
-
-function saveRecentSearches(city) {
-    recentSearchHistory = localStorage.getItem("recentSearches") ?
-        JSON.parse(localStorage.getItem("recentSearches")) : [];
-    recentSearchHistory.push(city)
-
-    // keeps array at length of 5 
-    if (recentSearchHistory.length > 5) {
-        recentSearchHistory.shift();
-    }
-    localStorage.setItem("recentSearches", JSON.stringify(recentSearchHistory))
-    clearBtns()
-    getSearches()
-}
 var searchCityEl = document.querySelector("#sunrise-form");
 var cityInputEl = document.querySelector("#city");
 var civilTwilightEl = document.getElementById("civil-twilight");
@@ -184,5 +145,3 @@ var getAstroDefinition = function(event) {
  document.getElementById("astro-button").addEventListener("click", getAstroDefinition);
 
 searchCityEl.addEventListener("submit", getSearch);
-
-initPage();
