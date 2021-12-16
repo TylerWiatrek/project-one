@@ -1,3 +1,49 @@
+function initPage() {
+    let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
+    console.log(searchHistory);
+
+
+    searchEl.addEventListener("click",function() {
+        const searchTerm = inputEl.value;
+        getWeather(searchTerm);
+        searchHistory.push(searchTerm);
+        localStorage.setItem("search",JSON.stringify(searchHistory));
+        renderSearchHistory();
+    })
+    clearEl.addEventListener("click",function() {
+        searchHistory = [];
+        renderSearchHistory();
+    })
+}
+function renderSearchHistory() {
+    historyEl.innerHTML = "";
+    for (let i=0; i<searchHistory.length; i++) {
+        const historyItem = document.createElement("input");
+        historyItem.setAttribute("type","text");
+        historyItem.setAttribute("readonly",true);
+        historyItem.setAttribute("class", "form-control d-block bg-white");
+        historyItem.setAttribute("value", searchHistory[i]);
+        historyItem.addEventListener("click",function() {
+            getWeather(historyItem.value);
+        })
+        historyEl.append(historyItem);
+    }
+    
+}
+function saveRecentSearches(city) {
+    recentSearchHistory = localStorage.getItem("recentSearches") ?
+        JSON.parse(localStorage.getItem("recentSearches")) : [];
+    recentSearchHistory.push(city)
+
+    // keeps array at length of 5 
+    if (recentSearchHistory.length > 5) {
+        recentSearchHistory.shift();
+    }
+    localStorage.setItem("recentSearches", JSON.stringify(recentSearchHistory))
+    clearBtns()
+    getSearches()
+}
+
 var searchCityEl = document.querySelector("#sunrise-form");
 var cityInputEl = document.querySelector("#city");
 var civilTwilightEl = document.getElementById("civil-twilight");
@@ -26,44 +72,26 @@ var getCityCoordinates = function(city, date) {
         });
 };
 
-// function initPage() {
-//     let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
-//     console.log(searchHistory);
 
-
-//     searchCityEl.addEventListener("click",function() {
-//         const searchTerm = cityInputEl.value;
-//         getSearch(searchTerm);
-//         searchHistory.push(searchTerm);
-//         localStorage.setItem("search",JSON.stringify(searchHistory));
-//         renderSearchHistory();
-//     })
-//     clearEl.addEventListener("click",function() {
-//         searchHistory = [];
-//         renderSearchHistory();
-//     })
-// }
-
-
-var getSunriseSunset = function(coordinates) {
-    var {lat} = coordinates;
-    var {lon} = coordinates; 
+function getSunriseSunset(coordinates) {
+    var { lat } = coordinates;
+    var { lon } = coordinates;
     console.log(lat);
     console.log(lon);
-    var apiSunrise = `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lon}`
+    var apiSunrise = `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lon}`;
     fetch(apiSunrise)
-    .then(function(response) {
-        return response.json()
-    }).then(function(data) {
-        //console.log(data)
-        getTimes(city, data);
-        getCivilTwilight(city, data);
-        getNauticalTwilight(city, data);
-        getAstroTwilight(city, data);
-        
-        
-    });
-};
+        .then(function (response) {
+            return response.json();
+        }).then(function (data) {
+            //console.log(data)
+            getTimes(city, data);
+            getCivilTwilight(city, data);
+            getNauticalTwilight(city, data);
+            getAstroTwilight(city, data);
+
+
+        });
+}
 
 var getTimes = function(city, data) {
     
@@ -120,6 +148,26 @@ var getNauticalTwilight = function(city, data) {
 
 }
 
+// const inputEl = document.getElementById("city-input");
+   // const searchEl = document.getElementById ("search-button");
+    // const clearEl = document.getElementById ("clear-history");
+    // const currentPicEl = document.getElementById ("current-pic");
+    //const nameEl = document.getElementById ("city-name");
+    //const currentTempEl = document.getElementById ("temperature");
+  //  const currentWindEl = document.getElementById ("wind-speed");
+  //  const currentHumidityEl = document.getElementById ("humidity");4
+ //   const currentUVEl = document.getElementById( "UV-index");
+ //   const historyEl = document.getElementById ("history");
+ //   const nauticalTwilightEl = document.getElementById ("Nautical Twilight");
+ //   const civilTwilightEl = document.getElementById ("Civil Twilight");
+  //  const sunriseEl = document.getElementById ("sunrise");
+  //  const sunsetEl = document.getElementById ("sunset"); 
+  //  let searchHistory = JSON.parse(localStorage.getItem ( "search")) || [];
+   // console.log (searchHistory);
+    
+
+
+
 var getAstroTwilight = function(city, data) {
 
     var astroTitle = document.createElement("h2");
@@ -165,3 +213,5 @@ var getAstroDefinition = function(event) {
  document.getElementById("astro-button").addEventListener("click", getAstroDefinition);
 
 searchCityEl.addEventListener("submit", getSearch);
+
+initPage();
