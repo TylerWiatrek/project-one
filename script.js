@@ -98,7 +98,7 @@ var getTimes = function(city, data) {
     sunriseEl.append(getSunriseTime);
     sunsetEl.append(getSunsetTime);
     var dayLength = document.createElement("p");
-    dayLength.classList.add("extra")
+    dayLength.classList.add("daylngth")
     dayLength.textContent = `Looks like the day will last for: ${data.results.day_length} hours`
     dayLengthEl.append(dayLength);
 
@@ -126,7 +126,7 @@ var getLocation = function(city, data) {
 var getWeather = function(city, data) {
     console.log(data);
     var civilClouds = document.createElement("p");
-    civilClouds.classList.add("extra")
+    civilClouds.classList.add("cloudcvr")
     civilClouds.textContent = `Cloud Coverage: ${data.weather[0].description}`
     civilTwilightEl.append(civilClouds);
 }
