@@ -92,8 +92,10 @@ function getSunriseSunset(coordinates) {
 var getTimes = function(city, data) {
     
     var getSunriseTime = document.createElement("p");
+    getSunriseTime.classList.add("text")
     getSunriseTime.textContent = `Sunrise: ${data.results.sunrise}`
     var getSunsetTime = document.createElement("p");
+    getSunsetTime.classList.add("text");
     getSunsetTime.textContent = `Sunset: ${data.results.sunset}`
     sunriseEl.append(getSunriseTime);
     sunsetEl.append(getSunsetTime);
@@ -118,7 +120,7 @@ var getCivilTwilight = function(city, data) {
 }
 var getLocation = function(city, data) {
     var currentCity = document.createElement("p");
-    //currentCity.classList.add("");
+    currentCity.classList.add("City");
     currentCity.textContent = cityInputEl.value.trim();
     console.log(currentCity);
     currentLocationEl.append(currentCity);
@@ -157,6 +159,9 @@ var getAstroTwilight = function(city, data) {
 
 
 }
+var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+
+
 var getSearch = function(event) {
     event.preventDefault();
     var cityName = cityInputEl.value.trim();

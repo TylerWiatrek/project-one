@@ -11,7 +11,7 @@
     <link rell="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Josefin+Sans:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body class="background">
@@ -30,7 +30,7 @@
             </button>
         </form>
         <!--area to return location, sunrise and sunset-->
-        <div class="location row align-center ">
+        <div class="row align-center location">
             <div id="location" class="columns medium-12 text-center h2"></div>
 
             <div id="sunrise" class="columns medium-12 text-center h4"></div>
@@ -70,14 +70,14 @@
         <div class="grid-x grid-margin-x">
             <div class="cell small-12 large-4 large-offset-1">
                 <div class="card crdstyle" id="civil-twilight" style="width: 300px;">
-                    <div class="card-divider text-center h3">
+                    <div class="card-divider text-center h3 crdtitle">
                     Civil Twilight
                     </div>
                     <img  class="image" src="./pictures/civil twilight.jpg">
                     <div class="card-section">
-                    <h4> The brightest Twilight right after sunset</h4>
-                    <p id="civilTimeStart"></p>
-                    <p id="civilTimeEnd"></p>
+                    <h4 class="crdtext"> The brightest Twilight right after sunset</h4>
+                    <p id="civilTimeStart" class="crdtext"></p>
+                    <p id="civilTimeEnd" class="crdtext"></p>
                     </div>
                 </div>                
             </div>    
@@ -85,14 +85,14 @@
             <div class="grid-x">
                 <div class="cell small-4">
                     <div class="card crdstyle" style="width: 300px;">
-                        <div class="card-divider text-center h3">
+                        <div class="card-divider text-center h3 crdtitle">
                         Nautical Twilight
                         </div>
                         <img class="image" src="./pictures/nautical twilight.jpg">
                         <div class="card-section">
-                        <h4>Half way point between Civil and Astro twilight</h4>
-                        <p id="nauticalTimeStart"></p>
-                        <p id="nauticalTimeEnd"></p>
+                        <h4 class="crdtext">Half way point between Civil and Astro twilight</h4>
+                        <p id="nauticalTimeStart" class="crdtext"></p>
+                        <p id="nauticalTimeEnd" class="crdtext"></p>
                         </div>
                     </div>                      
                 </div>
@@ -101,14 +101,14 @@
             <div class="grid-x grid-margin-x ">
                 <div class="cell small-4 large-offset-10">
                     <div class="card crdstyle" style="width: 300px;">
-                        <div class="card-divider text-center h3">
+                        <div class="card-divider text-center h3 crdtitle">
                         Astro Twilight
                         </div>
                         <img class="image" src="./pictures/astronomical twilight.jpg">
                         <div class="card-section">
-                        <h4>The darkest twilight after sunset</h4>
-                        <p id="astroTimeStart"></p>
-                        <p id="astroTimeEnd"></p>
+                        <h4 class="crdtext">The darkest twilight after sunset</h4>
+                        <p id="astroTimeStart" class="crdtext"></p>
+                        <p id="astroTimeEnd" class="crdtext"></p>
                         </div>
                     </div>                        
                 </div>

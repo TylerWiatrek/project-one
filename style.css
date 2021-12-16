@@ -13,7 +13,6 @@
 .title {
     padding: 50px;
     margin: 10px ;
-
     width: auto;
     height: auto;
     
@@ -32,9 +31,13 @@
 .location {
     padding-top: 100px;
     padding-bottom: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     font-size: 20px;
 
+}
+.City {
+    font-size: 50px;
+    font-family: 'Dancing Script', cursive;
 }
 .image {
     width: 300px;
@@ -43,14 +46,25 @@
 .daylngth{
     text-align: center;
     padding-bottom: 50px;
-    font-size: 25px;
+    font-size: 35px;
+    font-family: 'Josefin Sans' , sans-serif;
 }
 .cloudcvr {
     text-align: center;
-    font-size: 25px;
+    font-size: 35px;
+    font-family: 'Josefin Sans' , sans-serif;    
 }
 .crdstyle {
     border-radius: 50px;
+}
+.crdtitle {
+    font-family: 'Dancing Script', cursive;
+}
+.crdtext {
+    font-family: 'Josefin Sans' , sans-serif;
+}
+.text {
+    font-family: 'Josefin Sans' , sans-serif;
 }
 @media only screen and (max-width: 638px) {
     .header {
