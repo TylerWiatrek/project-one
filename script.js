@@ -43,7 +43,6 @@ function saveRecentSearches(city) {
     clearBtns()
     getSearches()
 }
-
 var searchCityEl = document.querySelector("#sunrise-form");
 var cityInputEl = document.querySelector("#city");
 var civilTwilightEl = document.getElementById("civil-twilight");
@@ -55,8 +54,6 @@ var civilButtonEl = document.getElementById("civil-button");
 var nauticalButtonEl = document.getElementById("nautical-button");
 var astroButtonEl = document.getElementById("astro-button");
 var dayLengthEl = document.getElementById("day-length");
-
-
 var getCityCoordinates = function(city, date) {
     
     var apiCoordURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2ea8fea258bbf4c7d30e6cc6067e3356`
@@ -71,8 +68,6 @@ var getCityCoordinates = function(city, date) {
         
         });
 };
-
-
 function getSunriseSunset(coordinates) {
     var { lat } = coordinates;
     var { lon } = coordinates;
@@ -92,7 +87,6 @@ function getSunriseSunset(coordinates) {
 
         });
 }
-
 var getTimes = function(city, data) {
     
     var getSunriseTime = document.createElement("p");
@@ -120,7 +114,6 @@ var getCivilTwilight = function(city, data) {
 
 
 }
-
 var getWeather = function(city, data) {
     console.log(data);
     var civilClouds = document.createElement("p");
@@ -128,7 +121,6 @@ var getWeather = function(city, data) {
     civilClouds.textContent = `Cloud Coverage: ${data.weather[0].description}`
     civilTwilightEl.append(civilClouds);
 }
-
 var getNauticalTwilight = function(city, data) {
     var nauticalTitle = document.createElement("h2");
     // need to add classes here for the title of each civil, nautical, astro div
@@ -142,27 +134,6 @@ var getNauticalTwilight = function(city, data) {
 
 
 }
-
-// const inputEl = document.getElementById("city-input");
-   // const searchEl = document.getElementById ("search-button");
-    // const clearEl = document.getElementById ("clear-history");
-    // const currentPicEl = document.getElementById ("current-pic");
-    //const nameEl = document.getElementById ("city-name");
-    //const currentTempEl = document.getElementById ("temperature");
-  //  const currentWindEl = document.getElementById ("wind-speed");
-  //  const currentHumidityEl = document.getElementById ("humidity");4
- //   const currentUVEl = document.getElementById( "UV-index");
- //   const historyEl = document.getElementById ("history");
- //   const nauticalTwilightEl = document.getElementById ("Nautical Twilight");
- //   const civilTwilightEl = document.getElementById ("Civil Twilight");
-  //  const sunriseEl = document.getElementById ("sunrise");
-  //  const sunsetEl = document.getElementById ("sunset"); 
-  //  let searchHistory = JSON.parse(localStorage.getItem ( "search")) || [];
-   // console.log (searchHistory);
-    
-
-
-
 var getAstroTwilight = function(city, data) {
 
     var astroTitle = document.createElement("h2");
@@ -177,25 +148,19 @@ var getAstroTwilight = function(city, data) {
 
 
 }
-
-
-
 var getSearch = function(event) {
     event.preventDefault();
     var cityName = cityInputEl.value.trim();
     getCityCoordinates(cityName);
 }
-
 var getCivilDefinition = function(event) {
     alert("The civil button was clicked!");
 
 }
-
 var getNauticalDefinition = function(event) {
     alert("The nautical button was clicked!");
 
 }
-
 var getAstroDefinition = function(event) {
     alert("The astronomical button was clicked!");
 
