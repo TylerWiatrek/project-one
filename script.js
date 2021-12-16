@@ -30,6 +30,7 @@ function renderSearchHistory() {
     }
     
 }
+
 function saveRecentSearches(city) {
     recentSearchHistory = localStorage.getItem("recentSearches") ?
         JSON.parse(localStorage.getItem("recentSearches")) : [];
@@ -54,6 +55,7 @@ var civilButtonEl = document.getElementById("civil-button");
 var nauticalButtonEl = document.getElementById("nautical-button");
 var astroButtonEl = document.getElementById("astro-button");
 var dayLengthEl = document.getElementById("day-length");
+var currentLocationEl = document.getElementById("location");
 var getCityCoordinates = function(city, date) {
     
     var apiCoordURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2ea8fea258bbf4c7d30e6cc6067e3356`
@@ -83,7 +85,7 @@ function getSunriseSunset(coordinates) {
             getCivilTwilight(city, data);
             getNauticalTwilight(city, data);
             getAstroTwilight(city, data);
-
+            getLocation(city, data);
 
         });
 }
@@ -113,6 +115,13 @@ var getCivilTwilight = function(city, data) {
     //civilTwilightEl.append(civilTitle, civilTimeStart, civilTimeEnd);
 
 
+}
+var getLocation = function(city, data) {
+    var currentCity = document.createElement("p");
+    //currentCity.classList.add("");
+    currentCity.textContent = cityInputEl.value.trim();
+    console.log(currentCity);
+    currentLocationEl.append(currentCity);
 }
 var getWeather = function(city, data) {
     console.log(data);
